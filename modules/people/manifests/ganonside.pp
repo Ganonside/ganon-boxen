@@ -2,6 +2,8 @@ class people::ganonside {
 	include chrome
 	include dash
 	include iterm2::stable
+	include module_data
+	include repository
 	include slack
 	include spectacle
 	include sudo
@@ -27,6 +29,10 @@ class people::ganonside {
 	class { 'osx::dock::position':
 		position => 'left'
 	}
+
+	include nodejs
+	nodejs::version { 'v0.12': }
+	nodejs::module { 'bower': }
 
 	$home = "/Users/${::boxen_user}"
 }
