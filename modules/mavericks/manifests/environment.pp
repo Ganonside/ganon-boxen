@@ -1,0 +1,3 @@
+class mavericks::environment {
+	
+}
